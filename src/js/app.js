@@ -3,9 +3,8 @@
 /* eslint-disable no-console */
 import GameSavingLoader from './gameSavingLoader';
 
-const gameSavingLoader = new GameSavingLoader();
-gameSavingLoader.load().then((saving) => {
-  console.log(saving);
-}, (error) => {
-  console.log('Какая-то ошибка');
-});
+export default (() => {
+  GameSavingLoader.load().then((saving) => JSON.parse(saving), (error) => {
+    console.log('Какая-то ошибка');
+  });
+})();

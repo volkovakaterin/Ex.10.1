@@ -8,8 +8,8 @@ import read from './reader';
 import json from './parser';
 
 export default class GameSavingLoader {
-  load() {
+  static load() {
     const data = read();
-    data.then((data) => json(data));
+    return data.then((data) => json(data));
   }
 }
