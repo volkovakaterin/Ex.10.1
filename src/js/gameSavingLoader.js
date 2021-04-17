@@ -9,7 +9,6 @@ import json from './parser';
 
 export default class GameSavingLoader {
   static load() {
-    const data = read();
-    return data.then((data) => json(data));
+    return read().then((data) => json(data)).then((result) => JSON.parse(result));
   }
 }

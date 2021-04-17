@@ -1,10 +1,8 @@
 /* eslint-disable linebreak-style */
-/* eslint-disable no-unused-vars */
 /* eslint-disable no-console */
+/* eslint-disable max-len */
 import GameSavingLoader from './gameSavingLoader';
 
-export default (() => {
-  GameSavingLoader.load().then((saving) => JSON.parse(saving), (error) => {
-    console.log('Какая-то ошибка');
-  });
+(() => {
+  GameSavingLoader.load().then((result) => { console.log(result); }).catch((error) => { console.log(error); });
 })();

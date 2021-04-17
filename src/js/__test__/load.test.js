@@ -1,26 +1,18 @@
 /* eslint-disable linebreak-style */
-import * as gameSavingLoader from '../app';
+import GameSavingLoader from '../gameSavingLoader';
 
 test('load', () => {
   const expected = {
     id: 9,
     created: 1546300800,
     userInfo: {
-      id: 1, name: 'Hitman', level: 10, points: 2000,
+      id: 1,
+      name: 'Hitman',
+      level: 10,
+      points: 2000,
     },
   };
-  return gameSavingLoader().then((data) => {
+  return GameSavingLoader.load().then((data) => {
     expect(data).toEqual(expected);
   });
 });
-// test('load', async () => {
-//   const data = await gameSavingLoader();
-//   const expected = {
-//     id: 9,
-//     created: 1546300800,
-//     userInfo: {
-//       id: 1, name: 'Hitman', level: 10, points: 2000,
-//     },
-//   };
-//   expect(data).toEqual(expected);
-// });
